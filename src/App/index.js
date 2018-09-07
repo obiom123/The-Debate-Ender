@@ -6,12 +6,12 @@ constructor(props){
   super(props)
   this.state = {
     pics: [
-      <p key='1'>Place Movie Pic 1 Here</p>,
-      <p key='2'>Place Movie Pic 2 Here</p>
+      <p key='1'>{this.moviePic}</p>,
+      <p key='2'>{this.moviePic}</p>
     ],
     movieTitle: '',
     releaseDate: '',
-    moviePic: '',
+    moviePic: 'noMovie',
     popularity: '',
     searchMovie: '',
   }
@@ -27,13 +27,14 @@ constructor(props){
     const apiData = await fetch(apiURL);
     const jsonApi = await apiData.json();
     console.log('this is jsonApi', jsonApi)
-    console.log('this is jsonApi.results[0]', jsonApi.results[0])
+    // console.log('this is jsonApi.results[0]', this.state.moviePic)
     this.setState({
       movieTitle: jsonApi.results[0].original_title,
       releaseDate: jsonApi.results[0].release_date,
       moviePic: jsonApi.results[0].poster_path,
       popularity: jsonApi.results[0].popularity,
     })
+    console.log('this is jsonApi.results[0]', this.state.moviePic)
   }
 
   
@@ -43,9 +44,11 @@ constructor(props){
   }
 
   handleSubmit= (event) => {
+    
     console.log('Person 1 has selected this movie ' + encodeURIComponent(this.state.searchMovie));
     event.preventDefault();
     this.fetchMovieData()
+    // console.log('pic you need ' + this.moviePic)
   }
 
 
@@ -56,21 +59,15 @@ constructor(props){
     <div className='container'>
     <div className="App">Hello World</div>
     <br></br>
-    <div>{this.state.pics}</div>
+    <img src ={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.moviePic}`} />
 
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+      <form className='form form1' onSubmit={this.handleSubmit}>
+      <input className='searchBar searchBar1' placeholder='Search 1st Movie' type="text" value={this.state.value} onChange={this.handleChange} />
+        <input className='button searchButton searchButton1' type="submit" value="Submit" />
       </form>
       
 
-      <form className='form form1'>
-      <input className='searchBar searchBar2' placeholder='Search 2nd Movie' type='search' ></input>
-      <button className='button searchButton searchButton1' type='submit'>Search</button>
-      </form>
+      
 
 
 
