@@ -6,9 +6,9 @@ export default class SecondPlayer extends Component {
     super(props)
     this.state = {
       
-      movieTitle: '',
-      releaseDate: '',
-      moviePic: 'noMovie',
+      movieTitle: 'The Notebook',
+      releaseDate: '2004-06-25',
+      moviePic: '/gMfstesBXKdsHToAUXVPHujUDfb.jpg',
       popularity: '',
       searchMovie: '',
     }
@@ -53,15 +53,17 @@ export default class SecondPlayer extends Component {
   
     render() {
       return ( 
-      <div className='container'>
-      <div className="App">Hello World</div>
-      <br></br>
-      <img src ={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.moviePic}`} />
+        <div className='container'>
+
+        <div className='movieContainer'>
+          <img className='selectedMovie' src ={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.moviePic}`}/>
+          <form className='form form1' onSubmit={this.handleSubmit}>
+            <input className='searchBar searchBar1' placeholder='Search 1st Movie' type="text" value={this.state.value} onChange={this.handleChange} />
+            <input className='button searchButton searchButton1' type="submit" value="Submit" />
+          </form>
+          <p>{this.state.movieTitle}<br></br>{this.state.releaseDate}</p>
   
-        <form className='form form1' onSubmit={this.handleSubmit}>
-        <input className='searchBar searchBar1' placeholder='Search 1st Movie' type="text" value={this.state.value} onChange={this.handleChange} />
-          <input className='button searchButton searchButton1' type="submit" value="Submit" />
-        </form>
+          </div>
         
   
         

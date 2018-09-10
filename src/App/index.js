@@ -15,12 +15,16 @@ constructor(props){
   render() {
     return ( 
     <div className='appContainer'>
+    <div className='playerContainer'>
+    <div>
     <FirstPlayer />
+    </div>
+    <div>
     <SecondPlayer />
-      
+   </div>
+   </div>
 
-
-
+ 
     </div>
     
   )

@@ -1,0 +1,25 @@
+.container{
+  display: flex;
+  
+}
+
+.selectedMovie{
+  width: 90%;
+}
+p{
+  font-size: 30px;
+  font-weight: 900
+}
+
+.movieContainer{
+  width: 350px;
+  margin-top: 20%;
+
+}
+.searchButton{
+  width: 80px;
+}
+.searchBar{
+  width: 230px;
+  height: 20px;
+}

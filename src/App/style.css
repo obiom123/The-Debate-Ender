@@ -1,0 +1,17 @@
+.appContainer{
+
+}
+
+.playerContainer{
+  display: flex;
+  justify-content: space-evenly;
+}
+p{
+  text-align: center;
+}
+
+
+body{
+  background-image: url('../images/popcorn.jpg');
+}
+
