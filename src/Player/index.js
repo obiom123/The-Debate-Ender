@@ -51,12 +51,12 @@ export default class Player extends Component {
       <div className='container'>
         <div className='movieContainer'>
           <div className='containerMeter'>
-            <div className='insideMeter' style={style}></div>
+            <div className='insideMeter' style={style}> {this.state.obiMeter  * 10}</div>
           </div>
           <img className='selectedMovie' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.moviePic}`} />
           <form className='form form1' onSubmit={this.handleSubmit} >
-            <input className='searchBar searchBar1' placeholder='Search 1st Movie' type="text" value={this.state.value} onChange={this.handleChange} />
-            <input className='button searchButton searchButton1' type="submit" value="Submit" />
+            <input className='searchBar searchBar1' placeholder='Search Movie Here' type="text" value={this.state.value} onChange={this.handleChange} />
+            {/* <input className='button searchButton searchButton1' type="submit" value="Submit" /> */}
             <p>{this.state.movieTitle}<br></br>{this.state.releaseDate}</p>
           </form>
         </div>

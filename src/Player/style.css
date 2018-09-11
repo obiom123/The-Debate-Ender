@@ -8,7 +8,7 @@
 }
 p{
   font-size: 30px;
-  font-weight: 900
+  font-weight: 900;
 }
 
 .movieContainer{
@@ -20,7 +20,7 @@ p{
   width: 80px;
 }
 .searchBar{
-  width: 230px;
+  width: 88%;
   height: 20px;
 }
 
@@ -36,4 +36,5 @@ p{
   width: 60%;
   height: 100%;
   background: pink;
+  color: gray;
 }
