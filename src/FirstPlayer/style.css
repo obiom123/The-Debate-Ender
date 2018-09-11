@@ -23,3 +23,17 @@ p{
   width: 230px;
   height: 20px;
 }
+
+.containerMeter{
+  width: 88%;
+  height: 40px;
+  background-color: gray;
+  border: solid black;
+  margin: 10px 0;
+}
+
+.insideMeter{
+  width: 60%;
+  height: 100%;
+  background: pink;
+}

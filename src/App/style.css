@@ -12,6 +12,31 @@ p{
 
 
 body{
-  background-image: url('../images/popcorn.jpg');
+  background-image:
+  linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../images/popcorn.jpg');
+padding: 0; 
 }
 
+.movies{
+  height: 100vh;
+}
+.playerContainer{
+  display: flex;
+  justify-content: space-evenly;
+}
+p{
+  text-align: center;
+  color: white;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+
+}
+
+.squashButton{
+  height: 50px;
+  margin: auto 0;
+}
