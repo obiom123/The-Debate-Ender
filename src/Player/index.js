@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./style.css";
 
-export default class FirstPlayer extends Component {
+export default class Player extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -34,6 +34,7 @@ export default class FirstPlayer extends Component {
   handleSubmit = (event) => {
     event.preventDefault();
     this.fetchMovieData();
+    this.props.hideScores();
   }
 
   mainButton = () => {
