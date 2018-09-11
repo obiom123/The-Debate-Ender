@@ -42,7 +42,7 @@ export default class FirstPlayer extends Component {
 
   render() {
     const style = {
-      width: (this.state.obiMeter * 10).toString() +'%',
+      width: this.props.showScores ? (this.state.obiMeter * 10).toString() +'%' : 0,
       transition: 'all 3s',
     }
 
