@@ -13,8 +13,8 @@ export default class SearchResults extends Component {
 
     return (
       <div className='containerforsearch'>
-        <div className= 'otherMovies'>Movie Search 1</div>
-        <div className= 'otherMovies'>Movie Search 2</div>
+        <div className= 'otherMovies'>{this.props.title2}</div>
+        <div className= 'otherMovies'>{this.props.title3}</div>
       </div>
     )
   }

@@ -6,14 +6,17 @@
 .selectedMovie{
   width: 90%;
 }
-p{
-  font-size: 30px;
+.movieDescription{
+  padding: -50px;
+  font-size: 28px;
   font-weight: 900;
+  text-align: center;
+  width: 90%;
 }
 
 .movieContainer{
   width: 350px;
-  margin-top: 20%;
+  margin-top: 10%;
 
 }
 .searchButton{
