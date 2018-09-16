@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import "./style.css";
 import Player from '../Player';
+import SearchResults from '../SearchResults';
+
 
 class App extends Component {
   constructor(props) {
@@ -30,10 +32,12 @@ class App extends Component {
           <div className='playerContainer'>
             <div>
               <Player  title='Home Alone' date='1990-11-09' pic='/5Lo3sWuvbO4AnrAHYBgB5U1Opqd.jpg' showScores={this.state.showScores} hideScores={this.hideScores}/>
+              <SearchResults />
             </div>
             <button onClick={() => this.squashTheDebate()} className='squashButton'>Squash The Debate</button>
             <div>
               <Player title='The Notebook' date='2004-06-25' pic='/gMfstesBXKdsHToAUXVPHujUDfb.jpg' showScores={this.state.showScores} hideScores={this.hideScores}/>
+              <SearchResults />
             </div>
           </div>
         </div>
