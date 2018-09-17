@@ -34,11 +34,13 @@ export default class Player extends Component {
       releaseDate3: jsonApi.results[2].release_date,
       moviePic3: jsonApi.results[2].poster_path,
       obiMeter3: jsonApi.results[2].vote_average,
+      movieSuggestion: false
     })
   }
 
   handleChange = (event) => {
     this.setState({ searchMovie: event.target.value });
+    //fetch this.state.searchMovies
   }
 
   handleSubmit = (event) => {
@@ -51,11 +53,43 @@ export default class Player extends Component {
     this.props.liftData()
   }
 
+  changeMovie2 = () => {
+    this.setState({
+      moviePic: this.state.moviePic2,
+      moviePic2: this.state.moviePic,
+      releaseDate: this.state.releaseDate2,
+      releaseDate2: this.state.releaseDate,
+      obiMeter: this.state.obiMeter2,
+      obiMeter2: this.state.obiMeter,
+      movieTitle2: this.state.movieTitle,
+      movieTitle: this.state.movieTitle2
+
+    })
+    
+  }
+
+  changeMovie3 = () => {
+    this.setState({
+      moviePic: this.state.moviePic3,
+      moviePic3: this.state.moviePic,
+      releaseDate: this.state.releaseDate3,
+      releaseDate3: this.state.releaseDate,
+      obiMeter: this.state.obiMeter3,
+      obiMeter3: this.state.obiMeter,
+      movieTitle3: this.state.movieTitle,
+      movieTitle: this.state.movieTitle3
+
+    })
+    
+  }
+
   render() {
     const style = {
       width: this.props.showScores ? (this.state.obiMeter * 10).toString() +'%' : 0,
       transition: 'all 3s',
     }
+
+    
 
     return (
       <div className='container'>
@@ -67,7 +101,7 @@ export default class Player extends Component {
           <form className='form form1' onSubmit={this.handleSubmit} >
             <input className='searchBar searchBar1' placeholder='Search Movie Here' type="text" value={this.state.value} onChange={this.handleChange} />
             <p className='movieDescription'>{this.state.movieTitle}, {this.state.releaseDate} <br></br>
-            <SearchResults title2={this.state.movieTitle2} title3={this.state.movieTitle3}/></p>
+            <SearchResults movieTitle2={this.state.movieTitle2} movieTitle3={this.state.movieTitle3} changeMovie2={this.changeMovie2} changeMovie3={this.changeMovie3}/></p>
           </form>
         </div>
       </div>
