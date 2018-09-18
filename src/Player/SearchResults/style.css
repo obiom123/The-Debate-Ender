@@ -1,5 +1,5 @@
 .otherMovies{
-  color: rgb(168, 20, 144);
+  color: rgb(124, 168, 20);
   font-size: 28px;
   font-weight: 900;
   text-align: center;
@@ -7,4 +7,11 @@
   text-decoration: black underline;
   padding: 8px;
   cursor: pointer;
+}
+
+.otherMovies:hover{
+  color: rgb(168, 20, 144);
+  background-color: blanchedalmond;
+  cursor: pointer;
+  font-size: 40px;
 }
