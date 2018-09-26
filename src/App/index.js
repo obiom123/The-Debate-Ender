@@ -36,6 +36,8 @@ class App extends Component {
             <div>
               <Player title='The Notebook' date='2004-06-25' pic='/gMfstesBXKdsHToAUXVPHujUDfb.jpg' showScores={this.state.showScores} hideScores={this.hideScores}/>
             </div>
+            {this.state.betterMovie ? <div>{this.state.betterMovie} is the better movie!</div> : null}
+            
           </div>
         </div>
       </div>

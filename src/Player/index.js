@@ -22,20 +22,21 @@ export default class Player extends Component {
     const jsonApi = await apiData.json();
     console.log('this is jsonApi', jsonApi)
     this.setState({
-      movieTitle: jsonApi.results[0].original_title,
-      releaseDate: jsonApi.results[0].release_date,
-      moviePic: jsonApi.results[0].poster_path,
-      obiMeter: jsonApi.results[0].vote_average,
-      movieTitle2: jsonApi.results[1].original_title,
-      releaseDate2: jsonApi.results[1].release_date,
-      moviePic2: jsonApi.results[1].poster_path,
-      obiMeter2: jsonApi.results[1].vote_average,
-      movieTitle3: jsonApi.results[2].original_title,
-      releaseDate3: jsonApi.results[2].release_date,
-      moviePic3: jsonApi.results[2].poster_path,
-      obiMeter3: jsonApi.results[2].vote_average,
+      movieTitle: jsonApi.results[0] ? jsonApi.results[0].original_title : '',
+      releaseDate: jsonApi.results[0] ? jsonApi.results[0].release_date : '',
+      moviePic: jsonApi.results[0] ? jsonApi.results[0].poster_path : '',
+      obiMeter: jsonApi.results[0] ? jsonApi.results[0].vote_average : '',
+      movieTitle2: jsonApi.results[1] ? jsonApi.results[1].original_title : '',
+      releaseDate2: jsonApi.results[1] ? jsonApi.results[1].release_date : '',
+      moviePic2: jsonApi.results[1] ? jsonApi.results[1].poster_path : '',
+      obiMeter2: jsonApi.results[1] ? jsonApi.results[1].vote_average : '',
+      movieTitle3: jsonApi.results[2] ? jsonApi.results[2].original_title : '',
+      releaseDate3: jsonApi.results[2] ? jsonApi.results[2].release_date : '',
+      moviePic3: jsonApi.results[2] ? jsonApi.results[2].poster_path : '',
+      obiMeter3: jsonApi.results[2] ? jsonApi.results[2].vote_average : '',
       movieSuggestion: false
     })
+
   }
 
   handleChange = (event) => {
@@ -100,8 +101,8 @@ export default class Player extends Component {
           <img className='selectedMovie' src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2${this.state.moviePic}`} />
           <form className='form form1' onSubmit={this.handleSubmit} >
             <input className='searchBar searchBar1' placeholder='Search Movie Here' type="text" value={this.state.value} onChange={this.handleChange} />
-            <p className='movieDescription'>{this.state.movieTitle}, {this.state.releaseDate} <br></br>
-            <SearchResults movieTitle2={this.state.movieTitle2} movieTitle3={this.state.movieTitle3} changeMovie2={this.changeMovie2} changeMovie3={this.changeMovie3}/></p>
+            <div className='movieDescription'>{this.state.movieTitle}, {this.state.releaseDate} <br></br>
+            <SearchResults movieTitle2={this.state.movieTitle2} movieTitle3={this.state.movieTitle3} changeMovie2={this.changeMovie2} changeMovie3={this.changeMovie3}/></div>
           </form>
         </div>
       </div>
